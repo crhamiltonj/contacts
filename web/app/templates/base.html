@@ -7,7 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Bulma CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <link rel="stylesheet" href="{{ url_for('landing_bp.static', filename='css/style.css') }}">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
   <title>Contacts</title>
 </head>
 
@@ -32,6 +34,11 @@
     {% block content %}
     {% endblock %}
   </section>
+  <footer class="footer is-dark">
+    <div class="content has-text-centered">
+      <p>Copyright &copy; 2019, <a href="http://alltheit.com">All The IT, LLC</a>. All rights reserved.</p>
+    </div>
+  </footer>
 
 
 </body>
