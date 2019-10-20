@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <title>Contacts</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand"><a href="#"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo"></a></div>
+  </nav>
+  {% block content %}
+  {% endblock %}
+</body>
+
+</html>

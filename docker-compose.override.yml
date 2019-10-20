@@ -1,0 +1,18 @@
+version: "2.4"
+
+services:
+  app:
+    build: ./web
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=wsgi.py
+      - FLASK_DEBUG=1
+      - FLASK_ENV=development
+    volumes:
+      - ./web:/usr/src/app/web
+    command: flask run --host=0.0.0.0
+
+  db:
+    ports:
+      - "27017:27017"
