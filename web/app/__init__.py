@@ -1,11 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask
+
 
 
 def create_app():
     app = Flask(__name__)
 
-    @app.route("/")
-    def index():
-        return render_template('index.html')
+    with app.app_context():
+        from .landing import routes
+
+        app.register_blueprint(routes.landing_bp)
+    
 
     return app
