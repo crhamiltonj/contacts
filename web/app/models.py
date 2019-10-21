@@ -11,4 +11,10 @@ class Contact(db.Model):
         return f'<Contact {first_name} {last_name}>'
 
     def save_to_db(self):
-        pass
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_by_last_name(cls, last_name):
+        found_contacts = Contact.query.filter_by(last_name=last_name).all()
+        return found_contacts
