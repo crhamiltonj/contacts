@@ -1,4 +1,4 @@
-FROM python:3.6.1
+FROM python:3.8.0-slim
 LABEL maintainer="Charles Hamilton <crhamiltonj@gmail.com>"
 
 # Create the group and user to be used in this container

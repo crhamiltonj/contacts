@@ -6,40 +6,6 @@ services:
     build: ./web
     expose:
       - "5000"
-    volumes:
-      - /usr/src/app/web/project/static
-    command: /usr/local/bin/gunicorn -w 2 -b :8000 proj
-    depends_on:
-      - db
-  
-  nginx:
-    restart: always
-    build: ./proxy
-    ports: 
-      - "80:80"
-    volumes:
-      - /www/static
-    volumes_from:
-      - app
-    depends_on:
-      - app
+    command: /usr/local/bin/gunicorn -w 2 -b :8000 
 
-  db:
-    image: mongo:4.0-xenial
-    volumes:
-      - /data/db
-    command: "true"
 
-  mongo:
-    restart: always
-    build: ./mongodb
-    volumes:
-      - /data
-    expose:
-      - 27017
-
-  mongoexp:
-    restart: always
-    image: mongo-express:latest
-    ports:
-      - "8081:8081"
